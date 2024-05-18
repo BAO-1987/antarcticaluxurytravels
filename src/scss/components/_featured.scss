@@ -1,0 +1,30 @@
+@use "../utils/functions/" as *;
+@use "../utils/mixins/" as *;
+
+.featured {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 98px;
+    gap: 48px;
+  }
+
+  &__item {
+    &:nth-child(2) {
+      padding-top: 32px;
+    }
+  }
+
+  img {
+    margin-bottom: 24px;
+  }
+
+  h2 {
+    margin-bottom: 76px;
+  }
+
+  .btn {
+    margin: 0 auto;
+    max-width: 244px;
+  }
+}

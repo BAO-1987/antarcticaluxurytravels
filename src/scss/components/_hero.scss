@@ -1,0 +1,105 @@
+@use "../utils/functions/" as *;
+@use "../utils/mixins/" as *;
+
+.hero {
+  $root: &;
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &__inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 899px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      background-color: rgba(0, 0, 0, 0.5);
+      inset: 0;
+    }
+
+    &::after {
+       content: "";
+      position: absolute;
+      left: 68px;
+      mask-image: url("../images/icons/hero.svg");
+      width: 6px;
+      height: 65%;
+      background-color: var(--color-white);
+      z-index: 1;
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 140px;
+    width: 100%;
+    max-width: 648px;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    padding-left: max(16px, calc((100% - 1200px) / 2));
+  }
+
+
+  h1 {
+    margin-bottom: 24px;
+  }
+
+  h3 {
+    font-size: clamp(18px, 1.0208rem + 0.463vi, 23px);
+  }
+
+  p {
+    margin-bottom: rem(48);
+    font-size: clamp(1.125rem, 1.0208rem + 0.463vi, 1.4375rem);
+  }
+
+  // .btn {
+  //   padding: 13px 81px;
+  // }
+
+  &__images {
+    display: flex;
+    gap: 24px;
+    position: relative;
+    z-index: 1;
+    margin-left: 92px;
+    width: calc(100% - 630px - 92px);
+  }
+
+  // &--home {
+  //   #{$root}__content {
+  //     max-width: 750px;
+  //   }
+  // }
+
+  @include media(tablet) {
+    &__inner {
+      min-height: 450px;
+    }
+
+    &__content {
+      max-width: 100%;
+      margin-bottom: 0;
+    }
+  }
+
+  @include media(mobile-m) {
+    &__inner {
+      min-height: 400px;
+    }
+
+    .btn {
+      max-width: 100%;
+    }
+  }
+}

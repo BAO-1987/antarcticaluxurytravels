@@ -1,0 +1,77 @@
+@use "../utils/functions/" as *;
+@use "../utils/mixins/" as *;
+
+.contacts {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &__inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 688px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      background-color: rgba(0, 0, 0, 0.2);
+      inset: 0;
+    }
+  }
+
+  &__form {
+    width: 100%;
+    max-width: 598px;
+    margin-inline: auto;
+
+    label,
+    textarea {
+      border: 0;
+      width: 100%;
+    }
+
+    input,
+    textarea {
+      padding: 19px 16px;
+      width: 100%;
+      max-width: 100%;
+      background-color: var(--color-white);
+
+      &::placeholder {
+        font-size: 16px;
+        color: var(--color-blue-400);
+      }
+    }
+
+    textarea {
+      min-height: 156px;
+      resize: none;
+    }
+  }
+
+  label {
+    display: block;
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+
+    &:last-of-type {
+      margin-bottom: 32px;
+    }
+  }
+
+  h2 {
+    margin-bottom: 32px;
+  }
+
+  .btn {
+    padding: 22px;
+    max-width: 100%;
+    background-color: var(--color-blue-300);
+  }
+}

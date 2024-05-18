@@ -1,0 +1,40 @@
+@use "../utils/functions/" as *;
+@use "../utils/mixins/" as *;
+
+.additional {
+  $root: &;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &__content {
+    padding: 50px 124px;
+    background-color: var(--color-dark-900);
+  }
+
+  &__image {
+    translate: 0 -32px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  h2 {
+    margin-bottom: 118px;
+  }
+
+  h3 {
+    color: var(--color-white);
+  }
+
+  p {
+    margin-bottom: 32px;
+  }
+
+  .btn {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,44 @@
+/* stylelint-disable declaration-no-important */
+@use "../utils/functions/" as *;
+@use "../utils/mixins" as *;
+
+*[class].btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  border-radius: 0;
+  border: 1px solid var(--color-blue-300);
+  padding: 15px 24px;
+  width: 100%;
+  max-width: fit-content;
+  font-family: inherit;
+  font-weight: var(--fw-600);
+  font-size: 16px;
+  line-height: 1;
+  color: var(--color-white);
+  background-color: transparent;
+  transition-property: background-color, color, border-color;
+  transition-duration: 0.3s;
+
+  &:hover,
+  &:focus {
+    border-color: var(--color-red-400);
+    color: var(--color-red-400);
+    background-color: var(--color-white);
+  }
+
+  &--request {
+    border-color: transparent;
+    background-color: var(--color-blue-300);
+  }
+
+  // &--sign {
+  //   color: var(--color-dark-900);
+  //   background-color: var(--color-white);
+  // }
+
+  &--big {
+    padding: 12px 47px;
+  }
+}
