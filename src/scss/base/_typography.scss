@@ -6,8 +6,9 @@ h2 {
   overflow: hidden;
   font-family: var(--font-family-secondary);
   font-weight: var(--fw-400);
-  font-size: clamp(65px, 2.5rem + 6.9444vi, 140px);
+  font-size: clamp(45px, 2.5rem + 6.9444vi, 140px);
   line-height: 1.2;
+  text-transform: uppercase;
 }
 
 h2,
@@ -20,7 +21,11 @@ h2,
 }
 
 .title {
-  font-size: clamp(1.25rem, 1.0417rem + 0.9259vi, 1.875rem);
+  margin-bottom: 24px;
+  font-size: clamp(1.25rem, 1rem + 1.1111vi, 2rem);
+  line-height: 1.2;
+  text-align: left;
+  color: var(--color-blue-400);
 }
 
 h3 {
@@ -35,10 +40,8 @@ p {
   font-size: 18px;
 }
 
-// .subtext {
-//   font-weight: var(--fw-500);
-//   font-size: 18px;
-//   line-height: 1.1;
-//   letter-spacing: 0.01em;
-//   opacity: 0.8;
-// }
+.subtext {
+  font-size: clamp(16px, 0.9167rem + 0.3704vi, 21px);
+  line-height: 1.6;
+  color: var(--color-dark-900);
+}

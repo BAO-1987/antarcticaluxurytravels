@@ -1,0 +1,102 @@
+@use "../../utils/functions/" as *;
+@use "../../utils/mixins" as *;
+
+.adventages {
+  &__title {
+    margin-bottom: 52px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  &__item {
+    counter-increment: adv-counter;
+    position: relative;
+    padding: 40px 30px;
+
+    &::before {
+      content: counter(adv-counter, decimal-leading-zero);
+      position: relative;
+      display: block;
+      margin-bottom: 29px;
+      font-weight: var(--fw-600);
+      font-size: clamp(2.5rem, 1.4792rem + 4.537vi, 5.5625rem);
+      line-height: 1;
+      color: var(--color-blue-400);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1px;
+      height: 100%;
+      background-color: var(--color-white);
+    }
+
+    p {
+      font-size: 16px;
+    }
+  }
+
+  h3 {
+    margin-bottom: 24px;
+    width: 100%;
+    max-width: 190px;
+    font-size: 28px;
+    line-height: 1.3;
+    color: var(--color-white);
+  }
+
+  @include media(tablet) {
+    &__title {
+      margin-bottom: 30px;
+    }
+
+    &__item {
+      padding: 16px;
+
+      &::before {
+        margin-bottom: 16px;
+      }
+    }
+
+    h3 {
+      margin-bottom: 16px;
+    }
+  }
+
+  @include media(mobile-l) {
+    &__list {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    &__item {
+      &:last-child {
+        grid-column: 2 span;
+      }
+    }
+
+    h3 {
+      max-width: 100%;
+      font-size: 20px;
+    }
+  }
+
+  @include media(mobile-m) {
+    &__list {
+      grid-template-columns: 1fr;
+    }
+
+    &__item {
+      &:last-child {
+        grid-column: auto;
+      }
+    }
+  }
+}

@@ -41,6 +41,8 @@
       width: 100%;
       max-width: 100%;
       background-color: var(--color-white);
+      font-size: 16px;
+      color: var(--color-blue-400);
 
       &::placeholder {
         font-size: 16px;
@@ -67,11 +69,25 @@
 
   h2 {
     margin-bottom: 32px;
+    color: var(--color-white);
   }
 
   .btn {
     padding: 22px;
     max-width: 100%;
     background-color: var(--color-blue-300);
+  }
+
+  @include media(tablet) {
+    &__inner {
+      min-height: 500px;
+    }
+  }
+
+  @include media(mobile-l) {
+    input,
+    textarea {
+      padding: 16px;
+    }
   }
 }

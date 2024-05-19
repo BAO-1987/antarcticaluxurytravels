@@ -1,0 +1,63 @@
+@use "../../utils/functions/" as *;
+@use "../../utils/mixins" as *;
+
+.journey {
+  &__inner {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2, auto);
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1097px;
+    gap: 64px;
+  }
+
+  h2 {
+    margin-bottom: 60px;
+  }
+
+  p {
+    color: var(--color-dark-900);
+  }
+
+  h3 {
+    margin-bottom: 0;
+    font-family: var(--font-family-secondary);
+    font-weight: var(--fw-400);
+    font-size: clamp(28px, 1.1667rem + 2.5926vi, 56px);
+    text-align: center;
+    color: var(--color-blue-400);
+  }
+
+  img {
+    margin-bottom: 26px;
+  }
+
+  @include media(tablet-wide) {
+    &__inner {
+      gap: 30px;
+    }
+
+    h2 {
+      margin-bottom: 30px;
+    }
+  }
+
+  @include media(mobile-l) {
+    &__inner {
+      justify-content: center;
+      grid-template-columns: 1fr;
+    }
+
+    &__image {
+      place-self: center;
+      text-align: center;
+
+      img {
+        margin: 0 auto 16px;
+        width: 120px;
+        aspect-ratio: 1;
+      }
+    }
+  }
+}

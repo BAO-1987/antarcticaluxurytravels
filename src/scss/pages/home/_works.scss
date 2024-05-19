@@ -8,7 +8,16 @@
     gap: 24px;
   }
 
+  &__item {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
   &__desc {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     padding: 32px;
     background-color: var(--color-dark-900);
   }
@@ -29,6 +38,40 @@
   }
 
   .btn {
+    margin-top: auto;
     min-width: 244px;
+  }
+
+  img {
+    width: 100%;
+    min-height: 330px;
+  }
+
+  @include media(tablet) {
+    &__desc {
+      padding: 16px;
+    }
+
+    h2 {
+      margin-bottom: 30px;
+    }
+  }
+
+  @include media(mobile-l) {
+    &__list {
+      grid-template-columns: 1fr;
+    }
+
+    &__desc {
+      height: auto;
+    }
+
+    img {
+      aspect-ratio: 2/1;
+    }
+
+    .btn {
+      max-width: 100%;
+    }
   }
 }

@@ -46,15 +46,7 @@
     color: var(--color-dark-900);
   }
 
-  h2,
-  h3 {
-    color: var(--color-blue-400);
-  }
-
   h2 {
-    margin-bottom: 24px;
-    font-size: clamp(1.5625rem, 1.4167rem + 0.6481vi, 2rem);
-    text-align: left;
     line-height: 1.18;
   }
 
@@ -62,5 +54,43 @@
     margin-bottom: 8px;
     font-weight: var(--fw-700);
     font-size: 18px;
+    color: var(--color-blue-400);
+  }
+
+  @include media(tablet-wide) {
+    &__title {
+      margin-bottom: 30px;
+    }
+
+    &__inner {
+      align-items: center;
+      gap: 30px;
+    }
+  }
+
+  @include media(tablet) {
+    &__inner {
+      justify-content: center;
+      grid-template-columns: 1fr;
+    }
+
+    &__content {
+      max-width: 100%;
+    }
+
+    &__list {
+      gap: 25px;
+    }
+
+    img {
+      width: 100%;
+      aspect-ratio: 12/8;
+    }
+  }
+
+  @include media(mobile-m) {
+    &__list {
+      grid-template-columns: 1fr;
+    }
   }
 }

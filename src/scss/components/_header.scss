@@ -7,7 +7,7 @@
   z-index: 10;
   padding: 26px 0;
   width: 100%;
-  background-color: var(--color-green-600);
+  background-color: transparent;
   transition-property: background-color, transform;
   transition-duration: 0.25s;
 
@@ -17,5 +17,25 @@
 
   &.hide {
     transform: translateY(-200%);
+  }
+
+  &.scroll,
+  &.active,
+  &--colored {
+    background: var(--color-blue-600);
+  }
+
+  @include media(desktop) {
+    .logo {
+      margin-right: 15px;
+      max-width: 200px;
+    }
+  }
+
+  @include media(tablet-wide) {
+    .nav__btns {
+      flex-direction: column;
+      gap: 24px;
+    }
   }
 }

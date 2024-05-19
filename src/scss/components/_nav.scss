@@ -33,11 +33,11 @@
     transition: color 0.3s linear;
 
     &:hover {
-      color: var(--color-blue-400);
+      color: var(--color-blue-300);
     }
 
     &.true {
-      color: var(--color-blue-400);
+      color: var(--color-blue-300);
     }
   }
 
@@ -61,7 +61,19 @@
     padding: 55px 0;
   }
 
-  @include media(tablet) {
+  @include media(desktop) {
+    &__item {
+      &:not(:last-child) {
+        margin-right: 15px;
+      }
+    }
+
+    &__list {
+      margin-right: 15px;
+    }
+  }
+
+  @include media(tablet-wide) {
     &__inner {
       position: fixed;
       right: 0;
@@ -74,7 +86,7 @@
       width: 100%;
       height: var(--vh);
       max-width: 350px;
-      background-color: var(--color-green-600);
+      background-color: var(--color-blue-600);
       transform: translateX(150%);
       transition-property: transform;
       transition-duration: 0.25s;
@@ -97,10 +109,11 @@
     &__link {
       font-size: 20px;
     }
+  }
 
-    &__btns {
-      flex-direction: column;
-      gap: 24px;
+  @include media(tablet) {
+    &--footer {
+      padding: 25px 0;
     }
   }
 
@@ -109,7 +122,6 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      margin-bottom: 25px;
       gap: 25px;
     }
   }

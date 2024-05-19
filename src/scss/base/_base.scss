@@ -95,9 +95,31 @@ body {
   min-height: var(--vh);
 }
 
-// .main {
-//   padding-top: var(--header-height);
-// }
+.travel {
+  li {
+    &:not(:last-child) {
+      margin-bottom: 48px;
+    }
+
+    p {
+      line-height: 1.5;
+    }
+  }
+
+  @include media(tablet) {
+    li {
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
+
+.main {
+  &--top {
+    padding-top: var(--header-height);
+  }
+}
 
 .logo {
   display: flex;
