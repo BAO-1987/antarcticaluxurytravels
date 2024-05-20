@@ -10,14 +10,14 @@
 
   h1 {
     margin-bottom: 48px;
-    font-size: clamp(28px, 1.1667rem + 2.5926vi, 56px);
+    font-size: clamp(35px, 1.1667rem + 2.5926vi, 56px);
     line-height: 1.4;
     text-align: center;
   }
 
   h2 {
     margin-bottom: 24px;
-    font-size: clamp(1.25rem, 1.0417rem + 0.9259vi, 1.875rem);
+    font-size: clamp(25px, 1.0417rem + 0.9259vi, 30px);
     text-align: left;
   }
 
@@ -52,6 +52,7 @@
 
   p,
   li {
+    font-size: 20px;
     color: var(--color-dark-900);
   }
 
