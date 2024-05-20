@@ -59,10 +59,15 @@
   @include media(tablet) {
     &__item {
       summary {
-        padding-right: 45px;
+        padding: 16px 45px 16px 16px;
 
         &::after {
           right: 14px;
+        }
+
+        + div {
+          padding: 16px 24px 16px 16px;
+          width: 100%;
         }
       }
     }
